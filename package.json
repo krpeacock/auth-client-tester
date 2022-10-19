@@ -6,7 +6,7 @@
   "module": "index.js",
   "scripts": {
     "start": "vite",
-    "build": "vite build",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,11 +15,14 @@
   "dependencies": {
     "@dfinity/agent": "^0.14.0",
     "@dfinity/auth-client": "^0.14.0",
-    "@dfinity/principal": "^0.14.0",
-    "haunted": "^5.0.0",
-    "lit-html": "^2.4.0"
+    "@dfinity/principal": "^0.14.0"
+  },
+  "peerDependencies": {
+    "haunted": "5.0.0",
+    "lit-html": "2.4.0"
   },
   "devDependencies": {
+    "typescript": "^4.8.4",
     "vite": "^3.1.8"
   }
 }

@@ -1,12 +1,12 @@
-import { html } from "lit-html";
+import { html, TemplateResult } from "lit-html";
 import { useState, component, useEffect } from "haunted";
 import { AuthClient } from "@dfinity/auth-client";
 import { styles } from "./styles";
 
-function App({ identityProvider }) {
+function App({ identityProvider = "https://ic0.app" }) {
   const [init, setInit] = useState(false);
   const [fromStorage, setFromStorage] = useState(false);
-  const [authClient, setAuthClient] = useState();
+  const [authClient, setAuthClient] = useState<AuthClient | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ function App({ identityProvider }) {
   };
 
   const handleSuccess = async () => {
-    setIsAuthenticated(await authClient.isAuthenticated());
+    setIsAuthenticated((await authClient?.isAuthenticated()) ?? false);
   };
 
   return html`
@@ -58,7 +58,13 @@ function App({ identityProvider }) {
   `;
 }
 
-function LoggedIn({ authClient, reset, fromStorage }) {
+type LoggedInProps = {
+  authClient: AuthClient;
+  reset: () => void;
+  fromStorage: boolean;
+};
+function LoggedIn(props: LoggedInProps) {
+  const { authClient, reset, fromStorage } = props;
   const principal = authClient.getIdentity().getPrincipal().toText();
 
   const logout = async () => {
@@ -77,4 +83,4 @@ function LoggedIn({ authClient, reset, fromStorage }) {
   </main>`;
 }
 
-customElements.define("auth-client-tester", component(App));
+customElements.define("auth-client-tester", component(App as any));
