@@ -27,3 +27,6 @@ And use it in your html with
 ```html
 <auth-client-tester></auth-client-tester>
 ```
+
+Test it out:
+[codesandbox - auth-client-tester](https://codesandbox.io/embed/clever-keller-whb2yn?fontsize=14&hidenavigation=1&theme=dark)
