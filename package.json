@@ -1,12 +1,12 @@
 {
-  "name": "auth-client-tester",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "module": "index.js",
+  "name": "@pavus/auth-client-tester",
+  "version": "0.0.1",
+  "description": "Web component to drop into an app and check what principal you get back",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "scripts": {
     "start": "vite",
-    "build": "tsc",
+    "build": "tsc --target esnext",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
