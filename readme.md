@@ -13,7 +13,7 @@ Peer dependencies include:
 To install, run
 
 ```shell-script
-npm install --save @dfinity/agent @dfinity/principal @dfinity/auth-client lit-html haunted
+npm install --save @pavus/auth-client-tester
 ```
 
 In your code, you can import with
