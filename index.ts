@@ -3,7 +3,7 @@ import { useState, component, useEffect } from "haunted";
 import { AuthClient } from "@dfinity/auth-client";
 import { styles } from "./styles";
 
-function App({ identityProvider = "https://ic0.app" }) {
+function App({ identityProvider = "https://identity.ic0.app/#authorize" }) {
   const [init, setInit] = useState(false);
   const [fromStorage, setFromStorage] = useState(false);
   const [authClient, setAuthClient] = useState<AuthClient | null>(null);

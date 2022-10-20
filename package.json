@@ -1,6 +1,6 @@
 {
   "name": "@pavus/auth-client-tester",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Web component to drop into an app and check what principal you get back",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -15,9 +15,10 @@
   "dependencies": {
     "@dfinity/agent": "^0.14.0",
     "@dfinity/auth-client": "^0.14.0",
-    "@dfinity/principal": "^0.14.0"
-  },
-  "peerDependencies": {
+    "@dfinity/authentication": "^0.14.0",
+    "@dfinity/identity": "^0.14.0",
+    "@dfinity/candid": "^0.14.0",
+    "@dfinity/principal": "^0.14.0",
     "haunted": "5.0.0",
     "lit-html": "2.4.0"
   },
